@@ -22,50 +22,42 @@ exports.handler = async function (event, context) {
   if (name === "word-pairs") {
     return {
       statusCode: 200,
-      headers: { "Cache-Control": "max-age=10" },
       body: JSON.stringify(pairs(sample(friendlyWords.predicates), sample(friendlyWords.objects)))
     }
   }else if (name === "objects") {
     return {
       statusCode: 200,
-      headers: { "Cache-Control": "max-age=10" },
       body: JSON.stringify(sample(friendlyWords.objects))
     }
   }else if (name === "predicates") {
     return {
       statusCode: 200,
-      headers: { "Cache-Control": "max-age=10" },
       body: JSON.stringify(sample(friendlyWords.predicates))
     }
   }else if (name === "team-pairs") {
     return {
       statusCode: 200,
-      headers: { "Cache-Control": "max-age=10" },
       body: JSON.stringify(pairs(sample(friendlyWords.predicates), sample(friendlyWords.teams)))
     }
   }else if (name === "teams") {
     return {
       statusCode: 200,
-      headers: { "Cache-Control": "max-age=10" },
       body: JSON.stringify(sample(friendlyWords.teams))
     }
   }
   else if (name === "collection-pairs") {
     return {
       statusCode: 200,
-      headers: { "Cache-Control": "max-age=10" },
       body: JSON.stringify(pairs(sample(friendlyWords.predicates), sample(friendlyWords.collections)))
     }
   }else if (name === "collections") {
     return {
       statusCode: 200,
-      headers: { "Cache-Control": "max-age=10" },
       body: JSON.stringify(sample(friendlyWords.collections))
     }
   }else {
     return {
       statusCode: 404,
-      headers: { "Cache-Control": "max-age=10" },
       body: JSON.stringify({ message: "Not found." })
     }
   }
