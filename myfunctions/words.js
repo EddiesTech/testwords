@@ -29,7 +29,7 @@ exports.handler = async function (event, context) {
     return {
       statusCode: 404,
       headers: { "Cache-Control": "max-age=10" },
-      body: JSON.stringify({ message: "Animal not found." })
+      body: JSON.stringify({ message: "Not found." })
     }
   }
 }
